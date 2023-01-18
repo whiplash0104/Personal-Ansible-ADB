@@ -7,7 +7,7 @@
 
   tasks:
     - block:
-        - name: Creata ADB (Always Free)
+        - name: Crea ADB (Always Free)
           oracle.oci.oci_database_autonomous_database:
               compartment_id: "{{ compartment_ocid }}"
               cpu_core_count: "{{ cpu_core_count }}"
@@ -24,7 +24,7 @@
 
         - assert:
             that:
-              - result.autonomous_database.lifecycle_state == "AVAILABLE"
+              - resultado.autonomous_database.lifecycle_state == "AVAILABLE"
 
         - name: Lista Todas las Instancias de ADB
           oracle.oci.oci_database_autonomous_database_facts:
